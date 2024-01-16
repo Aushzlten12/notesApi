@@ -14,8 +14,15 @@ mongoose
   });
 
 const noteSchema = new mongoose.Schema({
-  content: String,
-  date: Date,
+  content: {
+    type: String,
+    minlength: [5, "Must have minimum 5 characters"],
+    required: [true, "Content is required"],
+  },
+  date: {
+    type: Date,
+    required: [true, "Date is required"],
+  },
   important: Boolean,
 });
 
