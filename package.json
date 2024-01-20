@@ -8,7 +8,8 @@
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-ui": "rm -rf build && cd ../notesReact && npm run build --prod && cp -r build ../notesApi",
-    "debug": "node --inspect-brk index.js"
+    "debug": "node --inspect-brk index.js",
+    "eslint": "eslint ."
   },
   "keywords": [
     "api"
@@ -16,12 +17,14 @@
   "author": "aushalten",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^8.56.0",
     "nodemon": "^3.0.2"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "http": "^0.0.1-security",
     "mongoose": "^8.0.4"
   }
 }

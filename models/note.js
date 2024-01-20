@@ -1,12 +1,11 @@
 const mongoose = require("mongoose");
+const config = require("../utils/config");
 
-const url = process.env.MONGODB_URI;
-
-console.log("connectiong to", url);
+console.log("connectiong to", config.MONGODB_URI);
 
 mongoose
-  .connect(url)
-  .then((result) => {
+  .connect(config.MONGODB_URI)
+  .then(() => {
     console.log("connect to MongoDB");
   })
   .catch((error) => {
