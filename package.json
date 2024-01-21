@@ -4,12 +4,12 @@
   "description": "api using express",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
+    "start": "cross-env NODE_ENV=production node index.js",
+    "dev": "cross-env NODE_ENV=development nodemon index.js",
     "build-ui": "rm -rf build && cd ../notesReact && npm run build --prod && cp -r build ../notesApi",
     "debug": "node --inspect-brk index.js",
     "eslint": "eslint .",
-    "test": "jest --verbose"
+    "test": "cross-env NODE_ENV=test jest --verbose --runInBand"
   },
   "jest": {
     "testEnvironment": "node"
@@ -20,9 +20,11 @@
   "author": "aushalten",
   "license": "ISC",
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "eslint": "^8.56.0",
     "jest": "^29.7.0",
-    "nodemon": "^3.0.2"
+    "nodemon": "^3.0.2",
+    "supertest": "^6.3.4"
   },
   "dependencies": {
     "cors": "^2.8.5",
