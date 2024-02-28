@@ -9,10 +9,8 @@
     "build-ui": "rm -rf build && cd ../notesReact && npm run build --prod && cp -r build ../notesApi",
     "debug": "node --inspect-brk index.js",
     "eslint": "eslint .",
-    "test": "cross-env NODE_ENV=test jest --verbose --runInBand"
-  },
-  "jest": {
-    "testEnvironment": "node"
+    "test": "NODE_ENV=test jest --verbose --runInBand",
+    "start:test": "NODE_ENV=test node index.js"
   },
   "keywords": [
     "api"
